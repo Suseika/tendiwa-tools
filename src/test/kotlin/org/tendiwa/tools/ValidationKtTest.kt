@@ -22,7 +22,6 @@ class ValidationKtTest {
         expectRule.expectMessage(
             "Argument can't start with g; argument is \"goodbye\""
         )
-//        expectRule.expect(IllegalArgumentException::class.java)
         validateArgument(
             "goodbye",
             { !it.startsWith("g") },
