@@ -7,7 +7,7 @@ package org.tendiwa.tools
  * @param message Producer of a message for exception.
  * @throws IllegalArgumentException if `predicate(argument) == false`.
  */
-inline fun <T> validateArgument(
+inline fun <T> argumentConstraint(
     argument: T,
     predicate: (T) -> Boolean,
     message: () -> String
@@ -25,7 +25,7 @@ inline fun <T> validateArgument(
  * @param message Producer of a message for exception.
  * @throws IllegalArgumentException if [valid] is false.
  */
-inline fun validateArguments(
+inline fun argumentsConstraint(
     valid: Boolean,
     message: () -> String
 ) {

@@ -4,13 +4,13 @@ import org.junit.Rule
 import org.junit.Test
 import org.junit.rules.ExpectedException
 
-class ValidationKtTest {
+class ConstriantsKtTest {
 
     @JvmField @Rule val expectRule = ExpectedException.none()
 
     @Test
     fun validationCanPass() {
-        validateArgument(
+        argumentConstraint(
             "hello",
             { it != "goodbye" },
             { "There is no such thing as goodbye" }
@@ -22,7 +22,7 @@ class ValidationKtTest {
         expectRule.expectMessage(
             "Argument can't start with g; argument is \"goodbye\""
         )
-        validateArgument(
+        argumentConstraint(
             "goodbye",
             { !it.startsWith("g") },
             { "Argument can't start with g" }
